@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/meta.ejs') %> 
+  <title>Login</title>
+</head>
+<body>
+  <%- include('partials/nav.ejs') %>
+  <%- include('partials/nav-out.ejs') %>
+  <main>
+    <h1>Login to admin side</h1>
+    <form action="login" method="POST">
+      <div class="wrapper">
+        <label for="uName">Username</label>
+        <input type="text" id="uName" name="uName">
+      </div>
+      <div class="wrapper">
+        <label for="uPass">Password</label>
+        <input type="password" id="uPass" name="uPass">
+      </div> 
+      <div class="submission">
+        <input type="submit" value="Login!">
+      </div>
+    </form>
+  </main>
+  <%- include('partials/footer.ejs') %> 
+</body>
+</html>

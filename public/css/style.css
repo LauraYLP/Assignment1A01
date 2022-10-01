@@ -1,0 +1,116 @@
+body{
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #4297A0;
+    background-size: cover;
+    font-family: 'Montserrat', serif;
+    color: #F4EAE6;
+}
+body.item{
+    background-image: none;
+}
+body.item main{
+    width: 800px;
+    background-color: #2F5061;
+    background-size: cover;
+    padding-bottom: 40px;
+    border: 2px solid #F4EAE6;
+}
+body.item footer, body.item header, body.item nav ul li a{
+    color: #F4EAE6;
+}
+.logo{
+    width: 800px;
+    height: 100px;
+    background-color: #E57F84;
+    margin: 20px auto;
+    border: 2px solid #F4EAE6;
+    border-radius: 10px;
+    padding: 20px;
+}
+.tnksmessage{
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    font-weight: bold;
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul a{
+    color: #F4EAE6;
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+main{
+    width: 800px;
+    margin: 20px auto;
+    background-color: #2F5061;
+    border: 2px solid #F4EAE6;
+    border-radius: 10px;
+    padding: 20px;
+}
+main h1 h2{
+    font-weight: normal;
+    text-align: center;
+    color: #F4EAE6;
+    margin: auto;
+}
+main .wrapper{
+    margin: 10px;
+}
+main .wrapper label{
+    display: inline-block;
+    width: 150px;
+    font-size: 20px;
+}
+main .wrapper input{
+    background-color: transparent;
+    border: 1px solid #F4EAE6;
+    color: #F4EAE6;
+    font-size: 20px;
+    width: 600px;
+}
+main .submission{
+    text-align: left;
+    margin: 20px;
+}
+main .submission input{
+    border: 2px solid #2F5061;
+    background-color: #E57F84;
+    font-size: 24px;
+    font-family: 'Montserrat', serif;
+    color: #F4EAE6;
+    padding: 5px 10px;
+    border-radius: 10px 10px 0 0;
+}
+footer{
+    font-family: 'Montserrat', serif;
+    font-size: 10px;
+    text-align: center;
+}
+footer a{
+    color: #F4EAE6;
+}
+.error{
+    font-size: 12px;
+    color: #F4EAE6;
+    text-align: right;
+}
+.itemData{
+    text-align: left;
+    /*display: grid;
+    grid-template-columns: 2fr 1fr;*/
+}
+.itemData img{
+    width: 750px;
+    height: 250px;
+}

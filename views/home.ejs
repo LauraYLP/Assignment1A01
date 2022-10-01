@@ -1,0 +1,78 @@
+<%
+  var cName = '';
+  var cEmailPhone = '';
+  var cDescription = '';
+
+  var cNameError = '';
+  var cEmailPhoneError = '';
+  var cDescriptionError = '';
+
+  if(typeof(er) != 'undefined')
+  {
+    for(var error of er)
+    { 
+      switch(error.param){
+        case 'cName':         cName = error.value;
+                                  cNameError = error.msg;
+                                  break;
+        case 'cEmailPhone':       cEmailPhone = error.value;
+                                  cEmailPhoneError = error.msg;
+                                  break;
+        case 'cDescription':  cDescription = error.value;
+                                  cDescriptionError = error.msg;
+                                  break;
+      }
+    }
+  }
+%> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/meta.ejs') %> 
+  <title>Home</title>
+</head>
+<body>
+  <%- include('partials/nav.ejs') %>
+  <%- include('partials/nav-out.ejs') %>
+  <main>
+    <h1>New Request</h1>
+    <form action="process" method="POST" enctype="multipart/form-data">
+      <div class="wrapper">
+        <label for="cName">Name</label>
+        <input type="text" id="cName" name="cName" 
+        value="<%= cName %>">
+        <p class="error"><%= cNameError %></p>
+      </div>
+      <div class="wrapper">
+        <label for="cEmailPhone">Email / Phone</label>
+        <input type="text" id="cEmailPhone" name="cEmailPhone" 
+        value="<%= cEmailPhone %>">
+        <p class="error"><%= cEmailPhoneError %></p>
+      </div>
+      <div class="wrapper">
+        <label for="cImage">Photo</label>
+        <input type="file" id="cImage" name="cImage">
+      </div>
+      <div class="wrapper">
+        <label for="cDescription"></label>
+        <input type="text" id="cDescription" name="cDescription">
+        <p class="error"><%= cDescriptionError %></p>
+      </div>
+      <div class="submission">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+  </main>
+  
+  <%- include('partials/footer.ejs') %> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/tinymce/tinymce.min.js"></script>
+  <script>
+      tinymce.init({
+        selector: '#cDescription'
+      });
+  </script>
+</body>
+</html>

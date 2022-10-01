@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <%- include('partials/meta.ejs') %> 
+  <title>Delete</title>
+</head>
+<body class="item">
+  <%- include('partials/nav.ejs') %>
+  <%- include('partials/nav-in.ejs') %>
+  <main>
+    <h1>The following Request ID was delete!</h1>
+    <section>
+        <div class="itemData">
+          
+          <table>
+            <tr>
+              <th>Name: </th>
+              <td><%= cName %></td>
+            </tr>
+            <tr>
+              <th>Email / Phone: </th>
+              <td><%= cEmailPhone %></td>
+            </tr>
+            <tr>
+              <th>Description: </th>
+              <td><%- cDescription %></td>
+            </tr>
+          </table>
+          <img src="/uploads/<%= cImageName %>" alt="Photo">
+          
+        </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer.ejs') %> 
+</body>
+</html>

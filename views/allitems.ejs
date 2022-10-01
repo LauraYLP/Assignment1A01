@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <%- include('partials/meta.ejs') %> 
+  <title>Dashboard</title>
+  <style>
+      td img{
+          max-width: 60px;
+      }
+      table{
+          width: 100%;
+      }
+      th{
+          text-align: left;
+      }
+      main{
+          width: 800px;
+          background-color: rgba(0, 0, 0, 0.513);
+          font-family: 'Montserrat', serif;
+      }
+      a{
+          color: white;
+      }
+  </style>
+</head>
+<body>
+  <%- include('partials/nav.ejs') %>
+  <%- include('partials/nav-in.ejs') %>
+  <main>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email / Phone</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <%
+                for(var item of items){
+                    %>
+                        <tr>
+                            <td><a><%= item._id %></a></td>
+                            <td><%= item.cName %></td>
+                            <td><%= item.cEmailPhone %></td>
+                            <td><a href="/print/<%= item._id %>">View</a></td>
+                            <td><a href="/edit/<%= item._id %>">Edit</a></td>
+                            <td><a href="/delete/<%= item._id %>">Delete</a></td>
+                        </tr>
+                    <%
+                }
+            %>
+
+            
+        </table>
+  </main>
+  
+  <%- include('partials/footer.ejs') %> 
+
+</body>
+</html>

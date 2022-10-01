@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <%- include('partials/meta.ejs') %> 
+  <title>Item</title>
+</head>
+<body class="item">
+  <%- include('partials/nav.ejs') %>
+  <%- include('partials/nav-in.ejs') %>
+  <main>
+    <h1>View</h1>
+    <section>
+        <div class="itemData">
+          <img src="/uploads/<%= cImageName %>" alt="Photo">
+          <br>
+          <table>
+            <tr>
+              <th>Name: </th>
+              <td><%= cName %></td>
+            </tr>
+            <tr>
+              <th>Email / Phone: </th>
+              <td><%= cEmailPhone %></td>
+            </tr>
+            <tr>
+              <th>Issue: </th>
+              <td><%- cDescription %></td>
+            </tr>
+          </table>
+        </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer.ejs') %> 
+</body>
+</html>

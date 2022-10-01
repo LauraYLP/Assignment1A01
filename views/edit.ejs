@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/meta.ejs') %> 
+  <title>Home</title>
+</head>
+<body>
+  <%- include('partials/nav.ejs') %>
+  <%- include('partials/nav-in.ejs') %>
+  <main>
+    <h1>Edit</h1>
+    <form action="/editprocess/<%= _id %>" method="POST" enctype="multipart/form-data">
+      <div class="wrapper">
+        <label for="cName">Name</label>
+        <input type="text" id="cName" name="cName" value="<%= cName %>">
+      </div>
+      <div class="wrapper">
+        <label for="cEmailPhone">Email / Phone</label>
+        <input type="text" id="cEmailPhone" name="cEmailPhone" value="<%= cEmailPhone %>" >
+      </div>
+      <div class="wrapper">
+        <label for="cImage">Customer Image</label>
+        <img style="width: 50px;" src="/uploads/<%= cImageName %>" alt="Photo">
+        <input type="file" id="cImage" name="cImage">
+      </div>
+      <div class="wrapper">
+        <label for="cDescription">Customer Issue Description</label>
+        <input type="text" id="cDescription" name="cDescription" 
+        value="<%= cDescription %>">
+      </div>
+
+      <div class="submission">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+  </main>
+  
+  <%- include('partials/footer.ejs') %> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/js/tinymce/tinymce.min.js"></script>
+  <script>
+      tinymce.init({
+        selector: '#cDescription'
+      });
+  </script>
+</body>
+</html>
